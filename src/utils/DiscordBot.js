@@ -100,7 +100,7 @@ class DiscordBot {
         }
 
         this.client.once("ready", () => {
-        
+    
             const rest = new REST({
                 version: "10"
             }).setToken(this.token);
@@ -128,10 +128,8 @@ class DiscordBot {
     async slachcommands() {
       this.client.on("interactionCreate", async interaction => {
         if (interaction.type === InteractionType.ApplicationCommand) {
-
           const command = this.client.commands.get(interaction.commandName);
           if(!command) return;
-      
           try{
               await command.execute(interaction);
           } catch(err) {

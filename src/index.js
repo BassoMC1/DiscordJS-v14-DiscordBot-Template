@@ -10,4 +10,5 @@ const client = new DiscordBot({
     PathToEventsFolder: "../events/",
 }).startBot()
 
+
 module.exports = client
